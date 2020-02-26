@@ -12,7 +12,8 @@
 #include <cstring>
 #include <string>
 
-#define KEYFILE_PATH "shmViewer"
+//#define KEYFILE_PATH "shmViewer"
+#define KEYFILE_PATH "/opt/ssc/bin/hpvt"
 #define PROJ_CHAR    (char)'r'
 #define FIN (255)
 
@@ -40,7 +41,7 @@ struct SHM_PARAM{
  	char motion[256];
 };
 
-int shm_initialize(key_t shm_key, int shm_size,int *shrd_id,int *shm_ptr);
-int shm_access(key_t shm_key, int shm_size, int *shrd_id, int *shm_ptr);
+int shm_initialize(int shm_key, int shm_size,int *shrd_id,int *shm_ptr);
+int shm_access(int shm_key, int shm_size, int *shrd_id, int *shm_ptr);
 
 #endif /*  __SHMCOMMON_H__ */

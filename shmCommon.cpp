@@ -7,7 +7,7 @@
  * int     *shrd_id OUTPUT:  Pointer to the Shared Memory ID
  * int     *shm_ptr OUTPUT:  Pointer to the Top of SHM
  */
-int shm_initialize(key_t shm_key, int shm_size,int *shrd_id,int *shm_ptr)
+int shm_initialize(int shm_key, int shm_size,int *shrd_id,int *shm_ptr)
 {
   *shrd_id = shmget(shm_key, shm_size, IPC_CREAT|0666);
   if( *shrd_id < 0 ){
@@ -30,7 +30,7 @@ int shm_initialize(key_t shm_key, int shm_size,int *shrd_id,int *shm_ptr)
  * \param int     *shrd_id  OUTPUT:  Pointer to the Shared Memory ID
  * \param int     *shm_ptr  OUTPUT:  Pointer to the Top of SHM      
 */
-int shm_access(key_t shm_key, int shm_size, int *shrd_id, int *shm_ptr)
+int shm_access(int shm_key, int shm_size, int *shrd_id, int *shm_ptr)
 {
   /*-------- ACCESS TO CURRENT STATUS --------*/
   *shrd_id = shmget(shm_key, shm_size, 0444);

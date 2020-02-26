@@ -19,6 +19,7 @@ int main(int argc, char **argv)
   int shd_param_id;
   struct SHM_PARAM *param_ptr;
 
+/*
   key_t key;
 
   key = ftok(KEYFILE_PATH,PROJ_CHAR);
@@ -26,6 +27,8 @@ int main(int argc, char **argv)
     perror("ftok()");
     return 1;
   }
+*/
+	int key=6000;
 
   shm_initialize(key, sizeof(struct SHM_PARAM), &shd_param_id, (int *)&param_ptr);
   param_ptr->shd_param_id = shd_param_id;
